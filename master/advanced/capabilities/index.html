@@ -1070,7 +1070,7 @@
 <p>Специфичные параметры:</p>
 <ul>
 <li>
-<p><code>set_mode</code>: Вызываемый сервис при выборе режима в УДЯ. В переменной <code>mode</code> - значение режима на стороне Home Assistant</p>
+<p><code>set_mode</code>: Вызываемый сервис при выборе режима в УДЯ. В переменной <code>mode</code> - значение режима на стороне Home Assistant. Если не задан - устройство управляться не будет.</p>
 <div class="admonition example">
 <p class="admonition-title">Пример</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">set_mode</span><span class="p">:</span>
@@ -1137,7 +1137,7 @@
 <p>Специфичные параметры:</p>
 <ul>
 <li>
-<p><code>turn_on</code> и <code>turn_off</code>: Вызываемые сервисы при включении/выключении функции в УДЯ</p>
+<p><code>turn_on</code> и <code>turn_off</code>: Вызываемые сервисы при включении/выключении функции в УДЯ. Если не задан один или несколько сервисов - соответствующее действие выполняться не будет.</p>
 <div class="admonition example">
 <p class="admonition-title">Пример</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">turn_on</span><span class="p">:</span>
@@ -1210,6 +1210,9 @@
 </div>
 </li>
 </ul>
+<p>Для устройств, поддерживающих установку абсолютного значения, достаточно задать только <code>set_value</code>.
+А для устройств с поддержкой только относительного (например IR пульт) - <code>increase_value</code> и <code>decrease_value</code>.</p>
+<p>Если ни один сервис не задан - устройство управляться не будет.</p>
 <h3 id="custom-ranges-examples">Примеры<a class="headerlink" href="#custom-ranges-examples" title="Permanent link">&para;</a></h3>
 <h4 id="custom-ranges-example-breezer">Бризер<a class="headerlink" href="#custom-ranges-example-breezer" title="Permanent link">&para;</a></h4>
 <p>Изменение параметра <code>favorit_speed</code> на бризере Xiaomi (<code>fan.xiaomi_airfresh_a1</code>)</p>

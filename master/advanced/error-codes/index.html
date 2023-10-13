@@ -861,6 +861,7 @@
 <p>В шаблон передаётся переменная <code>capability</code>, содержащая информацию об умении (<a href="https://yandex.ru/dev/dialogs/smart-home/doc/reference/post-action.html">документация УДЯ</a>). 
 Самый простой способ её узнать - <a href="https://my.home-assistant.io/redirect/developer_events/">подпишитесь</a> на события <code>yandex_smart_home_device_action</code> и поуправляйте устройством. </p>
 <p>Список допустимых кодов ошибок <strong>фиксирован</strong> (<a href="https://yandex.ru/dev/dialogs/smart-home/doc/concepts/response-codes.html">полный список</a>).</p>
+<p>Для безусловного запрета включения или отключения устройства задайте параметры <code>turn_on</code> и/или <code>turn_off</code> в <a href="../../config/entity/#turn_on-off">параметрах устройства</a>.</p>
 <h2 id="examples">Примеры<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="not-enough-water">Мало воды в чайнике<a class="headerlink" href="#not-enough-water" title="Permanent link">&para;</a></h3>
 <p>— Включи чайник</p>
