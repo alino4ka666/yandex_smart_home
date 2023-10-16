@@ -769,11 +769,10 @@
 <p>Это можно обойти созданием дубликата компонента:</p>
 <ul>
 <li>В <code>custom_components</code> скопируйте каталог <code>yandex_smart_home</code> в <code>yandex_smart_home2</code> (это пример, название здесь и далее могут быть любыми)</li>
-<li>В <code>yandex_smart_home2/manifest.json</code> измените параметр <code>domain</code> на <code>yandex_smart_home2</code></li>
+<li>В <code>yandex_smart_home2/manifest.json</code> измените параметры <code>domain</code> на <code>yandex_smart_home2</code> и <code>name</code> на <code>Yandex Smart Home 2</code> </li>
 <li>В <code>yandex_smart_home2/const.py</code> измените переменную <code>DOMAIN</code> на <code>yandex_smart_home2</code></li>
-<li>В <code>yandex_smart_home2/const.py</code> измените переменную <code>CONFIG_ENTRY_TITLE</code> на <code>Yandex Smart Home 2</code></li>
 </ul>
-<p>Добавьте вновь созданную интеграцию на странице Настройки &rarr; Устройства и службы &rarr; Интеграции (ищите по названию из <code>CONFIG_ENTRY_TITLE</code>).</p>
+<p>Добавьте вновь созданную интеграцию на странице Настройки &rarr; Устройства и службы &rarr; Интеграции (ищите по названию из <code>manifest.json -&gt; name</code>).</p>
 <p>Настройка дублированного компонента выполняется через словарь <code>yandex_smart_home2</code>:</p>
 <div class="admonition example">
 <p class="admonition-title">configuration.yaml</p>
