@@ -465,58 +465,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#internal" class="md-nav__link">
+    Автоматически определяемые режимы
+  </a>
+  
+    <nav class="md-nav" aria-label="Автоматически определяемые режимы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#thermostat" class="md-nav__link">
     thermostat
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#swing" class="md-nav__link">
     swing
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#program" class="md-nav__link">
     program
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#fan_speed" class="md-nav__link">
     fan_speed
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#fan_speed-percentage" class="md-nav__link">
     fan_speed (скорость в процентах)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#cleanup_mode" class="md-nav__link">
     cleanup_mode
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#input_source" class="md-nav__link">
     input_source
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#scene" class="md-nav__link">
     scene
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -988,6 +1001,25 @@
   
   
     <li class="md-nav__item">
+      <a href="../../breaking-changes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Обратная совместимость
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../recipes/" class="md-nav__link">
         
   
@@ -1028,58 +1060,71 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#internal" class="md-nav__link">
+    Автоматически определяемые режимы
+  </a>
+  
+    <nav class="md-nav" aria-label="Автоматически определяемые режимы">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#thermostat" class="md-nav__link">
     thermostat
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#swing" class="md-nav__link">
     swing
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#program" class="md-nav__link">
     program
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#fan_speed" class="md-nav__link">
     fan_speed
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#fan_speed-percentage" class="md-nav__link">
     fan_speed (скорость в процентах)
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#cleanup_mode" class="md-nav__link">
     cleanup_mode
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#input_source" class="md-nav__link">
     input_source
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#scene" class="md-nav__link">
     scene
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1114,7 +1159,7 @@
 <p>Для их устранения задайте соответствия режимов УДЯ &harr; HA используя пример ниже, 
 или напишите в <a href="https://t.me/yandex_smart_home">чат</a> в Telegram, и эта ошибка будет устранена в следующей версии.</p>
 <div class="admonition example">
-<p class="admonition-title">Пример</p>
+<p class="admonition-title">Пример сопоставления режимов</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">yandex_smart_home</span><span class="p">:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">entity_config</span><span class="p">:</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">light.led_strip</span><span class="p">:</span>
@@ -1139,30 +1184,31 @@
 </code></pre></div>
 </div>
 <ul>
-<li><code>scene</code>, <code>fan_speed</code>, <code>swing</code> - режим/функция со стороны УДЯ (<a href="https://yandex.ru/dev/dialogs/smart-home/doc/concepts/mode-instance.html">все функции</a> + <code>scene</code> для светильников)</li>
-<li><code>auto</code>, <code>stationary</code>, <code>alarm</code> - значение режима со стороны УДЯ (<a href="https://yandex.ru/dev/dialogs/smart-home/doc/concepts/mode-instance-modes.html">возможные значения режимов</a>, <a href="#scene">возможные значения сцен</a>)</li>
+<li><code>scene</code>, <code>fan_speed</code>, <code>swing</code> - режим/функция со стороны УДЯ (<a href="https://yandex.ru/dev/dialogs/smart-home/doc/concepts/mode-instance.html">все функции</a> + <code>scene</code> для светильников <code>light.X</code>)</li>
+<li><code>auto</code>, <code>stationary</code> - значение режима со стороны УДЯ (<a href="https://yandex.ru/dev/dialogs/smart-home/doc/concepts/mode-instance-modes.html">возможные значения</a>)</li>
+<li><code>sunrise</code>, <code>alarm</code>, <code>fantasy</code> - (только для функции <code>scene</code>) название сцены со стороны УДЯ (<a href="#scene">возможные значения</a>)</li>
 <li>Списки значений (<code>Wake Up</code>, <code>Swing</code> и т.п.) - значения атрибута объекта в Home Assistant, которое соответствует значению режима в УДЯ.
-  Задавать лучше строками в кавычках.</li>
+  Задавать лучше строками в кавычках. Узнать все поддерживаемые режимы можно в атрибутах объекта через (Панель разработчика &rarr; <a href="https://my.home-assistant.io/redirect/developer_states/">Состояния</a>).</li>
 </ul>
-<p>Ниже детальная информация по поддерживаемым режимам и их значениям.</p>
+<h2 id="internal">Автоматически определяемые режимы<a class="headerlink" href="#internal" title="Permanent link">&para;</a></h2>
 <h3 id="thermostat">thermostat<a class="headerlink" href="#thermostat" title="Permanent link">&para;</a></h3>
 <p>Установка температурного режима работы климатической техники, например, в кондиционере.</p>
 <ul>
-<li>Поддерживаемые домены: <code>climate</code></li>
+<li>Домены: <code>climate</code></li>
 <li>Рекомендуемые значения режимов: <code>heat</code>, <code>cool</code>, <code>auto</code>, <code>dry</code>, <code>fan_only</code></li>
 <li>Атрибут в Home Assistant: <code>hvac_modes</code></li>
 </ul>
 <h3 id="swing">swing<a class="headerlink" href="#swing" title="Permanent link">&para;</a></h3>
 <p>Установка направления воздуха в климатической технике.</p>
 <ul>
-<li>Поддерживаемые домены: <code>climate</code></li>
+<li>Домены: <code>climate</code></li>
 <li>Рекомендуемые значение режимов: <code>vertical</code>, <code>horizontal</code>, <code>stationary</code>, <code>auto</code></li>
 <li>Атрибут в Home Assistant: <code>swing_modes</code></li>
 </ul>
 <h3 id="program">program<a class="headerlink" href="#program" title="Permanent link">&para;</a></h3>
 <p>Установка какой-либо программы работы.</p>
 <ul>
-<li>Поддерживаемые домены: <code>humidifier</code>, <code>fan</code></li>
+<li>Домены: <code>humidifier</code>, <code>fan</code></li>
 <li>Рекомендуемые значения режимов: <code>normal</code>, <code>eco</code>, <code>min</code>, <code>turbo</code>, <code>medium</code>, <code>max</code>, <code>quiet</code>, <code>auto</code>, <code>high</code></li>
 <li>Атрибут в Home Assistant:<ul>
 <li><code>humidifier</code>: <code>available_modes</code></li>
@@ -1173,7 +1219,7 @@
 <h3 id="fan_speed">fan_speed<a class="headerlink" href="#fan_speed" title="Permanent link">&para;</a></h3>
 <p>Установка режима работы скорости вентиляции, например, в кондиционере, вентиляторе или обогревателе.</p>
 <ul>
-<li>Поддерживаемые домены: <code>fan</code>, <code>climate</code></li>
+<li>Домены: <code>fan</code>, <code>climate</code></li>
 <li>Рекомендуемые значения режимов: <code>auto</code>, <code>quiet</code>, <code>low</code>, <code>medium</code>, <code>high</code>, <code>turbo</code></li>
 <li>Атрибут в Home Assistant:<ul>
 <li><code>fan</code>: <code>preset_modes</code> (если не поддерживается установка скорости в процентах, сервис <code>fan.set_speed_percentage</code>)</li>
@@ -1200,21 +1246,21 @@
 <h3 id="cleanup_mode">cleanup_mode<a class="headerlink" href="#cleanup_mode" title="Permanent link">&para;</a></h3>
 <p>Установка режима уборки.</p>
 <ul>
-<li>Поддерживаемые домены: <code>vacuum</code></li>
+<li>Домены: <code>vacuum</code></li>
 <li>Рекомендуемые значения режимов: <code>auto</code>, <code>turbo</code>, <code>min</code>, <code>max</code>, <code>express</code>, <code>normal</code>, <code>quiet</code></li>
 <li>Атрибут в Home Assistant: <code>fan_speed_list</code></li>
 </ul>
 <h3 id="input_source">input_source<a class="headerlink" href="#input_source" title="Permanent link">&para;</a></h3>
 <p>Установка источника сигнала.</p>
 <ul>
-<li>Поддерживаемые домены: <code>media_player</code></li>
+<li>Домены: <code>media_player</code></li>
 <li>Рекомендуемые значения режимов: <code>one</code>, <code>two</code>, <code>three</code>, <code>four</code>, <code>five</code>, <code>six</code>, <code>seven</code>, <code>eight</code>, <code>nine</code>, <code>ten</code></li>
 <li>Атрибут в Home Assistant: <code>source_list</code></li>
 </ul>
 <h3 id="scene">scene<a class="headerlink" href="#scene" title="Permanent link">&para;</a></h3>
-<p>Изменение режима работы светящихся элементов устройства в соответствии с предустановленными темами и сценариями освещения.</p>
+<p>Изменение режима работы светящихся элементов устройства в соответствии с предустановленными темами и сценариями освещения (<a href="../../devices/light/#scene">подробнее</a>).</p>
 <ul>
-<li>Поддерживаемые домены: <code>light</code></li>
+<li>Домены: <code>light</code></li>
 <li>Атрибут в Home Assistant: <code>effect_list</code></li>
 <li>Значения режимов:</li>
 </ul>

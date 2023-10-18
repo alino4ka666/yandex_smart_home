@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://docs.yaha-cloud.ru/master/quasar/">
+        <link rel="canonical" href="https://docs.yaha-cloud.ru/master/breaking-changes/">
       
       
-        <link rel="prev" href="../troubleshoot/debug/">
+        <link rel="prev" href="../faq/">
       
       
-        <link rel="next" href="../supported-devices/">
+        <link rel="next" href="../recipes/">
       
       
       <link rel="icon" href="../assets/logo/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Квазар и "Дом с Алисой" - Yandex Smart Home</title>
+        <title>Обратная совместимость - Yandex Smart Home</title>
       
     
     
@@ -58,8 +58,8 @@
     
     
 <meta property="og:title" content="Yandex Smart Home">
-<meta property="og:description" content="Квазар и &#34;Дом с Алисой&#34;">
-<meta property="og:url" content="https://docs.yaha-cloud.ru/master/quasar/">
+<meta property="og:description" content="Обратная совместимость">
+<meta property="og:url" content="https://docs.yaha-cloud.ru/master/breaking-changes/">
 <meta property="og:image" content="../assets/logo/logo.png">
 
   </head>
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#discovery" class="md-skip">
+        <a href="#0x-1x" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -131,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Квазар и "Дом с Алисой"
+              Обратная совместимость
             
           </span>
         </div>
@@ -831,27 +831,9 @@
       
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Квазар и "Дом с Алисой"
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../quasar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -860,58 +842,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Содержание
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#discovery" class="md-nav__link">
-    Обновление списка устройств
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unlink" class="md-nav__link">
-    Отвязка навыка (производителя) и удаление устройств
-  </a>
-  
-    <nav class="md-nav" aria-label="Отвязка навыка (производителя) и удаление устройств">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#unlink-app" class="md-nav__link">
-    Дом с Алисой
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unlink-quasar" class="md-nav__link">
-    Квазар
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -958,9 +888,27 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../breaking-changes/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Обратная совместимость
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -969,6 +917,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#0x-1x" class="md-nav__link">
+    Переход с 0.x на 1.x
+  </a>
+  
+    <nav class="md-nav" aria-label="Переход с 0.x на 1.x">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom_toggles" class="md-nav__link">
+    Состояние для custom_toggles
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1017,30 +1003,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#discovery" class="md-nav__link">
-    Обновление списка устройств
+  <a href="#0x-1x" class="md-nav__link">
+    Переход с 0.x на 1.x
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unlink" class="md-nav__link">
-    Отвязка навыка (производителя) и удаление устройств
-  </a>
-  
-    <nav class="md-nav" aria-label="Отвязка навыка (производителя) и удаление устройств">
+    <nav class="md-nav" aria-label="Переход с 0.x на 1.x">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#unlink-app" class="md-nav__link">
-    Дом с Алисой
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#unlink-quasar" class="md-nav__link">
-    Квазар
+  <a href="#custom_toggles" class="md-nav__link">
+    Состояние для custom_toggles
   </a>
   
 </li>
@@ -1068,42 +1040,32 @@
   
 
 
-  <h1>Квазар и "Дом с Алисой"</h1>
+  <h1>Обратная совместимость</h1>
 
-<p>Квазар - это веб-интерфейс, который используется для управления Умным домом Яндекса. </p>
-<p>Доступен через браузер по адресу <a href="https://yandex.ru/quasar">https://yandex.ru/quasar</a>, официально Яндексом <strong>не поддерживается</strong>.</p>
-<div class="admonition info">
-<p class="admonition-title">Аналогичная функциональность так же доступна в мобильном приложении <a href="https://mobile.yandex.ru/apps/smarthome">Дом с Алисой</a></p>
+<h2 id="0x-1x">Переход с 0.x на 1.x<a class="headerlink" href="#0x-1x" title="Permanent link">&para;</a></h2>
+<h3 id="custom_toggles">Состояние для custom_toggles<a class="headerlink" href="#custom_toggles" title="Permanent link">&para;</a></h3>
+<p>Пользовательские умения типа "Переключатели" теперь ожидают бинарные значения (<code>on/off/yes/no/True/False/1/0</code>) при определении своего состояния. 
+До версии 1.0 умение считалось включенным, когда состояние отличалось от <code>off</code>.</p>
+<div class="admonition example">
+<p class="admonition-title">До 1.х</p>
 </div>
-<h2 id="discovery">Обновление списка устройств<a class="headerlink" href="#discovery" title="Permanent link">&para;</a></h2>
-<p>Нажмите иконку <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32v144H48c-17.7 0-32 14.3-32 32s14.3 32 32 32h144v144c0 17.7 14.3 32 32 32s32-14.3 32-32V288h144c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span> в правом верхнем углу &rarr; <code>Устройство умного дома</code> &rarr; 
-Найдите производителя <code>Yaha Cloud</code> (или свой собственный навык) &rarr; <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M105.1 202.6c7.7-21.8 20.2-42.3 37.8-59.8 62.5-62.5 163.8-62.5 226.3 0l17.1 17.2H336c-17.7 0-32 14.3-32 32s14.3 32 32 32h127.9c17.7 0 32-14.3 32-32V64c0-17.7-14.3-32-32-32s-32 14.3-32 32v51.2l-17.5-17.6c-87.5-87.5-229.3-87.5-316.8 0-24.4 24.4-42 53.1-52.8 83.8-5.9 16.7 2.9 34.9 19.5 40.8s34.9-2.9 40.8-19.5zM39 289.3c-5 1.5-9.8 4.2-13.7 8.2-4 4-6.7 8.8-8.1 14-.3 1.2-.6 2.5-.8 3.8-.3 1.7-.4 3.4-.4 5.1V448c0 17.7 14.3 32 32 32s32-14.3 32-32v-51.1l17.6 17.5c87.5 87.4 229.3 87.4 316.7 0 24.4-24.4 42.1-53.1 52.9-83.7 5.9-16.7-2.9-34.9-19.5-40.8s-34.9 2.9-40.8 19.5c-7.7 21.8-20.2 42.3-37.8 59.8-62.5 62.5-163.8 62.5-226.3 0l-.1-.1-17.1-17.1H176c17.7 0 32-14.3 32-32s-14.3-32-32-32H48.4c-1.6 0-3.2.1-4.8.3s-3.1.5-4.6 1z"/></svg></span> Обновить</p>
-<p><img alt="" src="../assets/images/quasar/discovery-1.png" width="340" />
-<img alt="" src="../assets/images/quasar/discovery-2.png" width="340" /></p>
-<h2 id="unlink">Отвязка навыка (производителя) и удаление устройств<a class="headerlink" href="#unlink" title="Permanent link">&para;</a></h2>
-<p>Это может быть полезно если в УДЯ выгрузили много лишнего из Home Assistant, и удалять руками каждое устройство не хочется. 
-Или при переходе с прямого подключение на облачное (и наоборот).</p>
-<h3 id="unlink-app">Дом с Алисой<a class="headerlink" href="#unlink-app" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Нажмите иконку <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32v144H48c-17.7 0-32 14.3-32 32s14.3 32 32 32h144v144c0 17.7 14.3 32 32 32s32-14.3 32-32V288h144c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span> в правом верхнем углу &rarr; <code>Устройство умного дома</code></li>
-<li>Найдите производителя <code>Yaha Cloud</code> (или свой собственный навык) и нажмите иконку <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0h120.4c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64s14.3-32 32-32h96l7.2-14.3zM32 128h384v320c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></span></li>
-<li>Поставьте галочку <code>Удалить устройства</code> (если планируется повторно привязывать производителя - галочку ставить не нужно)</li>
-<li>Нажмите <code>Отвязать от Яндекса</code> или <code>Удалить аккаунт и устройства</code></li>
-</ul>
-<p><img alt="" src="../assets/images/quasar/discovery-3.png" width="270" />
-<img alt="" src="../assets/images/quasar/unlink-4.png" width="270" /></p>
-<h3 id="unlink-quasar">Квазар<a class="headerlink" href="#unlink-quasar" title="Permanent link">&para;</a></h3>
-<ul>
-<li>Нажмите иконку <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32v144H48c-17.7 0-32 14.3-32 32s14.3 32 32 32h144v144c0 17.7 14.3 32 32 32s32-14.3 32-32V288h144c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg></span> в правом верхнем углу &rarr; <code>Устройство умного дома</code> &rarr;
-  Найдите и выберите производителя <code>Yaha Cloud</code> (или свой собственный навык)</li>
-<li>Нажмите иконку <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M135.2 17.7C140.6 6.8 151.7 0 163.8 0h120.4c12.1 0 23.2 6.8 28.6 17.7L320 32h96c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 96 0 81.7 0 64s14.3-32 32-32h96l7.2-14.3zM32 128h384v320c0 35.3-28.7 64-64 64H96c-35.3 0-64-28.7-64-64V128zm96 64c-8.8 0-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16zm96 0c-8.8 0-16 7.2-16 16v224c0 8.8 7.2 16 16 16s16-7.2 16-16V208c0-8.8-7.2-16-16-16z"/></svg></span> в правом верхнем углу</li>
-<li>Поставьте галочку <code>Удалить устройства</code> (если планируется повторно привязывать производителя - галочку ставить не нужно) </li>
-<li>Нажмите <code>Отвязать от Яндекса</code> или <code>Удалить аккаунт и устройства</code></li>
-</ul>
-<p><img alt="" src="../assets/images/quasar/discovery-1.png" width="340" />
-<img alt="" src="../assets/images/quasar/discovery-2.png" width="340" />
-<img alt="" src="../assets/images/quasar/unlink-1.png" width="340" />
-<img alt="" src="../assets/images/quasar/unlink-2.png" width="340" /></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">yandex_smart_home</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">entity_config</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">humidifier.humidifier</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">custom_toggles</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="nt">backlight</span><span class="p">:</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">          </span><span class="nt">state_entity_id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">select.humidifier_led_brightness</span><span class="w">  </span><span class="c1"># значения high/med/off</span>
+</code></pre></div>
+<div class="admonition example">
+<p class="admonition-title">После 1.х</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">yandex_smart_home</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">entity_config</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">humidifier.humidifier</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">custom_toggles</span><span class="p">:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nt">backlight</span><span class="p">:</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">          </span><span class="nt">state_template</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{{</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&quot;select.humidifier_led_brightness&quot;,</span><span class="nv"> </span><span class="s">&quot;off&quot;)</span><span class="nv"> </span><span class="s">}}&#39;</span><span class="w"> </span>
+</code></pre></div>
 
 
 
@@ -1131,7 +1093,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../troubleshoot/debug/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Отладка">
+          <a href="../faq/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Часто задаваемые вопросы">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1141,20 +1103,20 @@
                 Назад
               </span>
               <div class="md-ellipsis">
-                Отладка
+                Часто задаваемые вопросы
               </div>
             </div>
           </a>
         
         
           
-          <a href="../supported-devices/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Поддерживаемые устройства">
+          <a href="../recipes/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Рецепты">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Поддерживаемые устройства
+                Рецепты
               </div>
             </div>
             <div class="md-footer__button md-icon">
