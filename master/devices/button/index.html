@@ -1206,8 +1206,9 @@
 <p>Для подключения подобных кнопок:</p>
 <ul>
 <li><a href="../../faq/#get-entity-id">Узнайте</a> ID объекта, в котором появляется текст при нажатии на кнопку (в примере используется <code>sensor.button_action</code>)</li>
+<li>Добавьте объект в список объектов для передачи и обновите список устройств в УДЯ</li>
 <li>
-<p>Добавьте в <a href="../../config/getting-started/#yaml">YAML конфигурацию</a>:</p>
+<p>Если кнопка не появилась в УДЯ - добавьте в <a href="../../config/getting-started/#yaml">YAML конфигурацию</a>:</p>
 <div class="admonition example">
 <p class="admonition-title">configuration.yaml</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">yandex_smart_home</span><span class="p">:</span>
@@ -1216,9 +1217,6 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">device_class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">button</span>
 </code></pre></div>
 </div>
-<ul>
-<li>Добавьте объект в список объектов для передачи</li>
-</ul>
 </li>
 </ul>
 <h2 id="advanced">Сложная настройка<a class="headerlink" href="#advanced" title="Permanent link">&para;</a></h2>
