@@ -79,6 +79,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#properties" class="md-skip">
+          Перейти к содержанию
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -582,6 +587,17 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Событийные датчики
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -591,6 +607,71 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Ручное добавление
+  </a>
+  
+    <nav class="md-nav" aria-label="Ручное добавление">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#property-type" class="md-nav__link">
+    Тип датчика
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-value-state" class="md-nav__link">
+    Источник состояния (объект)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-value-template" class="md-nav__link">
+    Источник состояния (шаблон)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-types" class="md-nav__link">
+    Типы событий
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-class" class="md-nav__link">
+    Выбор класса бинарного датчика
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1031,6 +1112,62 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Содержание
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#properties" class="md-nav__link">
+    Ручное добавление
+  </a>
+  
+    <nav class="md-nav" aria-label="Ручное добавление">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#property-type" class="md-nav__link">
+    Тип датчика
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-value-state" class="md-nav__link">
+    Источник состояния (объект)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#property-value-template" class="md-nav__link">
+    Источник состояния (шаблон)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-types" class="md-nav__link">
+    Типы событий
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#device-class" class="md-nav__link">
+    Выбор класса бинарного датчика
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -1049,10 +1186,211 @@
 
   <h1>Событийные датчики</h1>
 
-<p>Событийные датчики (открытие двери, нажатие кнопки и т.п.) могут задаваться вручную через список <code>properties</code> в <code>entity_config</code>. Каждый датчик содержит один или несколько параметров. Устройство может иметь одновременно событийные и <a href="../float/">цифровые датчики</a>.</p>
-<div class="admonition abstract">
-<p class="admonition-title">В процессе написания</p>
+<p>Событийные датчики используются для отображения свойств устройства в УДЯ. Например: открытие двери (закрыта/открыта) или уровень воды (пустой/низкий/нормальный). </p>
+<p>Для <a href="../../../supported-devices/#event-sensor">автоматически обнаруженных</a> датчиков из <code>binary_sensor</code> будут использоваться только два значения, 
+например для "Наличие газа": <code>on</code> - обнаружено, <code>off</code> - не обнаружено, а "Высокий уровень" (<code>high</code>) никак задействован не будет.</p>
+<p>Для задействования всех возможных событий используйте <code>sensor</code> на <a href="https://www.home-assistant.io/integrations/template/#state-based-template-binary-sensors-buttons-images-numbers-selects-and-sensors">шаблоне</a> или параметр <a href="#property-value-template"><code>value_template</code></a>.</p>
+<h2 id="properties">Ручное добавление<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
+<p>Событийные датчики могут быть добавлены к любому устройству вручную через список <code>properties</code> в <code>entity_config</code>. 
+Каждый датчик содержит один или несколько параметров. </p>
+<p>Устройство может иметь одновременно событийные и <a href="../float/">цифровые датчики</a>.</p>
+<div class="admonition example">
+<p class="admonition-title">Пример настройки датчиков</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">yandex_smart_home</span><span class="p">:</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">entity_config</span><span class="p">:</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">humidifier.room</span><span class="p">:</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">properties</span><span class="p">:</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float.water_level</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">          </span><span class="nt">entity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor.room_humidifier_water_level</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">open</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">          </span><span class="nt">value_template</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{{</span><span class="nv"> </span><span class="s">is_state(&quot;binary_sensor.room_humidifer_water_tank&quot;,</span><span class="nv"> </span><span class="s">&quot;off&quot;</span><span class="nv"> </span><span class="s">}}&#39;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="nt">media_player.tv</span><span class="p">:</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">      </span><span class="nt">properties</span><span class="p">:</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">motion</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">          </span><span class="nt">entity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">binary_sensor.motion_near_tv</span>
+</code></pre></div>
 </div>
+<h3 id="property-type">Тип датчика<a class="headerlink" href="#property-type" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Параметр: <code>type</code> (обязательный)</p>
+</blockquote>
+<p>Может быть задан в сокращённом или полном виде (<code>event.X</code>). Полный вид желательно использовать для датчиков, которые могут быть как числовыми, так и событийными (<code>battery_level</code>, <code>food_level</code>, <code>water_level</code>).</p>
+<table>
+<thead>
+<tr>
+<th>Тип (сокр.)</th>
+<th>Тип (полный)</th>
+<th>Описание</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>battery_level</td>
+<td>event.battery_level</td>
+<td>Cобытия заряда батареи</td>
+</tr>
+<tr>
+<td>button</td>
+<td>event.button</td>
+<td>События нажатия кнопки</td>
+</tr>
+<tr>
+<td>food_level</td>
+<td>event.food_level</td>
+<td>События, связанные с уровнем корма</td>
+</tr>
+<tr>
+<td>gas</td>
+<td>event.gas</td>
+<td>Cобытия наличия газа в помещении</td>
+</tr>
+<tr>
+<td>motion</td>
+<td>event.motion</td>
+<td>События, связанные с наличием движения в области действия датчика</td>
+</tr>
+<tr>
+<td>open</td>
+<td>event.open</td>
+<td>Cобытия открытия/закрытия дверей, окон и т. п.</td>
+</tr>
+<tr>
+<td>smoke</td>
+<td>event.smoke</td>
+<td>События наличия дыма в помещении</td>
+</tr>
+<tr>
+<td>vibration</td>
+<td>event.vibration</td>
+<td>События физического воздействия: вибрация, падение, переворачивание</td>
+</tr>
+<tr>
+<td>water_leak</td>
+<td>event.water_leak</td>
+<td>События протечки воды</td>
+</tr>
+<tr>
+<td>water_level</td>
+<td>event.water_level</td>
+<td>События, связанные с уровнем воды</td>
+</tr>
+</tbody>
+</table>
+<h3 id="property-value-state">Источник состояния (объект)<a class="headerlink" href="#property-value-state" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Параметры: <code>entity</code> и/или <code>attribute</code></p>
+</blockquote>
+<p>Задают объект и/или его атрибут, в котором находится текущее состояние датчика. Нельзя использовать совместо с <a href="#state-template"><code>value_template</code></a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Описание</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">yandex_smart_home</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">entity_config</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">humidifier.room</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">properties</span><span class="p">:</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="c1"># Задан только атрибут, значение датчика будет взято из атрибута объекта, для которого задаются датчики</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">        </span><span class="c1"># В даннном случае - атрибут humidifier.fault объекта humidifer.room</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event.water_leak</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">          </span><span class="nt">attribute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">humidifier.fault</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">        </span><span class="c1"># Значение датчика будет взято из состояния объекта sensor.humidier_room_water_tank</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event.open</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">          </span><span class="nt">entity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor.humidier_room_water_tank</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">        </span><span class="c1"># Значение датчика будет взято из атрибута action объекта sensor.button</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event.button</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">          </span><span class="nt">entity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor.button</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="w">          </span><span class="nt">attribute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">action</span>
+</code></pre></div>
+</div>
+<h3 id="property-value-template">Источник состояния (шаблон)<a class="headerlink" href="#property-value-template" title="Permanent link">&para;</a></h3>
+<blockquote>
+<p>Параметр: <code>value_template</code></p>
+</blockquote>
+<p>Задаёт шаблон для вычисления текущего состояние датчика. Нельзя использовать совместно с <a href="#property-value-state"><code>entity</code> и/или <code>attribute</code></a>.</p>
+<div class="admonition info">
+<p class="admonition-title">Описание</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">yandex_smart_home</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">entity_config</span><span class="p">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">humidifier.room</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="nt">properties</span><span class="p">:</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event.water_level</span><span class="w"> </span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">          </span><span class="nt">value_template</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"> </span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="no">{% set water_level = states(&quot;sensor.humidier_room_water_level&quot;)|int(0) %}</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">            </span><span class="no">{% if water_level &gt; 60 %}</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">              </span><span class="no">normal</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">            </span><span class="no">{% elif water_level &gt; 20 %}</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">              </span><span class="no">empty</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">            </span><span class="no">{% else %}</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">              </span><span class="no">low </span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">            </span><span class="no">{% endif %}</span>
+</code></pre></div>
+</div>
+<h2 id="event-types">Типы событий<a class="headerlink" href="#event-types" title="Permanent link">&para;</a></h2>
+<p>Компонент автоматически пытается сопоставить значения датчика в Home Assistant со значением в УДЯ. Для каждого типа датчика поддерживается ограниченный набор событий. </p>
+<p>Если в HA происходит событие (например, нажатие на кнопку), но в УДЯ оно не появляется - включите <a href="../../../troubleshoot/debug/">отладку компонента</a> и 
+поищите в журнале событий по <code>Unknown event</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Тип</th>
+<th>Поддерживаемые значения: HA - УДЯ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>battery_level</td>
+<td><code>on</code>, <code>low</code>- Низкий<br><code>off</code>, <code>normal</code> - Нормальный</td>
+</tr>
+<tr>
+<td>button</td>
+<td><code>click</code>, <code>single</code> - Одиночное нажатие<br><code>double_click</code>, <code>double</code>, <code>many</code> - Двойное нажатие<br><code>long_press</code>, <code>long</code>, <code>hold</code> - Долгое нажатие</td>
+</tr>
+<tr>
+<td>food_level</td>
+<td><code>empty</code> - Пустой<br><code>low</code>- Низкий<br><code>normal</code> - Нормальный</td>
+</tr>
+<tr>
+<td>gas</td>
+<td><code>on</code>, <code>detected</code> - Обнаружено<br><code>off</code>, <code>not_detected</code> - Не обнаружено<br><code>high</code> - Высокий уровень</td>
+</tr>
+<tr>
+<td>motion</td>
+<td><code>on</code>, <code>detected</code> - Обнаружено<br><code>off</code>, <code>not_detected</code> - Не обнаружено</td>
+</tr>
+<tr>
+<td>open</td>
+<td><code>on</code>, <code>opened</code> - Открыто<br ><code>off</code>, <code>closed</code> - Закрыто</td>
+</tr>
+<tr>
+<td>smoke</td>
+<td><code>on</code>, <code>detected</code> - Обнаружено<br><code>off</code>, <code>not_detected</code> - Не обнаружено<br><code>high</code> - Высокий уровень</td>
+</tr>
+<tr>
+<td>vibration</td>
+<td><code>tilt</code>, <code>rotate</code> - Переворачивание<br><code>fall</code>, <code>drop</code> - Падение<br><code>on</code>, <code>vibration</code> - Вибрация</td>
+</tr>
+<tr>
+<td>water_leak</td>
+<td><code>on</code>, <code>leak</code> - Протечка<br><code>off</code>, <code>dry</code> - Нет протечки</td>
+</tr>
+<tr>
+<td>water_level</td>
+<td><code>empty</code> - Пустой<br><code>on</code>, <code>low</code>- Низкий<br><code>off</code>, <code>normal</code> - Нормальный</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<ul>
+<li><code>on</code>: Любая логическая истина: <code>on</code>, <code>true</code>, <code>yes</code>, <code>1</code></li>
+<li><code>off</code>: Любая логическая ложь: <code>off</code>, <code>false</code>, <code>no</code>, <code>0</code> </li>
+</ul>
+<p>Перечислена только часть поддерживаемых значений со стороны Home Assistant.</p>
+</div>
+<h2 id="device-class">Выбор класса бинарного датчика<a class="headerlink" href="#device-class" title="Permanent link">&para;</a></h2>
+<p>Некоторые интеграции создают бинарные датчики с пустым или неверным атрибутом <code>device_class</code>. Такие датчики автоматически обнаружены не будут, но по-прежнему могут
+быть добавлены <a href="#properties">вручную</a>.</p>
+<p>Вы можете самостоятельно задать атрибут <code>device_class</code> через параметр объекта <code>Отображать как</code> в <code>Настройки</code> &rarr; <code>Устройства и объекты</code> &rarr; <a href="https://my.home-assistant.io/redirect/entities/"><code>Объекты</code></a></p>
+<p><img alt="" src="../../../assets/images/devices/sensor/binary-device-class.png" width="750" /></p>
 
 
 

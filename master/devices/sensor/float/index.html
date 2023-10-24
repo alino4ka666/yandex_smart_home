@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#type" class="md-skip">
+        <a href="#properties" class="md-skip">
           Перейти к содержанию
         </a>
       
@@ -602,16 +602,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#type" class="md-nav__link">
+  <a href="#properties" class="md-nav__link">
+    Ручное добавление
+  </a>
+  
+    <nav class="md-nav" aria-label="Ручное добавление">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#property-type" class="md-nav__link">
     Тип датчика
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#state-object" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#property-value-state" class="md-nav__link">
     Источник состояния (объект)
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1085,16 +1098,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#type" class="md-nav__link">
+  <a href="#properties" class="md-nav__link">
+    Ручное добавление
+  </a>
+  
+    <nav class="md-nav" aria-label="Ручное добавление">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#property-type" class="md-nav__link">
     Тип датчика
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#state-object" class="md-nav__link">
+        
+          <li class="md-nav__item">
+  <a href="#property-value-state" class="md-nav__link">
     Источник состояния (объект)
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1118,7 +1144,9 @@
 
   <h1>Цифровые датчики</h1>
 
-<p>Цифровые датчики могут задаваться вручную через список <code>properties</code> в <code>entity_config</code>. Каждый датчик содержит один или несколько параметров. Устройство может иметь одновременно цифровые и <a href="../event/">событийные датчики</a>.</p>
+<h2 id="properties">Ручное добавление<a class="headerlink" href="#properties" title="Permanent link">&para;</a></h2>
+<p>Цифровые датчики могут быть добавлены к любому устройству вручную через список <code>properties</code> в <code>entity_config</code>. Каждый датчик содержит один или несколько параметров.</p>
+<p>Устройство может иметь одновременно цифровые и <a href="../event/">событийные датчики</a>.</p>
 <div class="admonition example">
 <p class="admonition-title">Пример настройки датчиков</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">yandex_smart_home</span><span class="p">:</span>
@@ -1131,14 +1159,16 @@
 <a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">          </span><span class="nt">entity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor.bedroom_humidity</span>
 <a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">co2_level</span>
 <a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">          </span><span class="nt">entity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sensor.bedroom_co2</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nt">sensor.pet_feeder</span><span class="p">:</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pet_feeder</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">      </span><span class="nt">properties</span><span class="p">:</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float.food_level</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">          </span><span class="nt">attribute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pet_feeder.pet_food_left_level</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">event.motion</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">          </span><span class="nt">entity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">binary_sensor.bedroom_motion</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">    </span><span class="nt">sensor.pet_feeder</span><span class="p">:</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pet_feeder</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">      </span><span class="nt">properties</span><span class="p">:</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">float.food_level</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w">          </span><span class="nt">attribute</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pet_feeder.pet_food_left_level</span>
 </code></pre></div>
 </div>
-<h2 id="type">Тип датчика<a class="headerlink" href="#type" title="Permanent link">&para;</a></h2>
+<h3 id="property-type">Тип датчика<a class="headerlink" href="#property-type" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>Параметр: <code>type</code> (обязательный)</p>
 </blockquote>
@@ -1229,7 +1259,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="state-object">Источник состояния (объект)<a class="headerlink" href="#state-object" title="Permanent link">&para;</a></h2>
+<h3 id="property-value-state">Источник состояния (объект)<a class="headerlink" href="#property-value-state" title="Permanent link">&para;</a></h3>
 <blockquote>
 <p>Параметры: <code>entity</code> и/или <code>attribute</code></p>
 </blockquote>

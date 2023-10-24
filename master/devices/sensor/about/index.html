@@ -602,13 +602,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#device-class" class="md-nav__link">
-    Выбор класса бинарного датчика
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1119,13 +1112,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#device-class" class="md-nav__link">
-    Выбор класса бинарного датчика
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -1153,7 +1139,7 @@
 <img alt="" src="../../../assets/images/devices/sensor/simple-3.png" width="200" />
 <img alt="" src="../../../assets/images/devices/sensor/simple-2.png" width="480" /></p>
 <h2 id="combine">Сборка нескольких датчиков в одном устройство<a class="headerlink" href="#combine" title="Permanent link">&para;</a></h2>
-<p>В <a href="#simple">первом способе</a> одно физическое устройство (датчик температуры/влажности) передавалась в УДЯ как несколько независимых устройств, и это в большинстве случаев неудобно. </p>
+<p>В <a href="#simple">первом способе</a> одно физическое устройство (датчик температуры/влажности) передавалось в УДЯ как несколько независимых устройств, и это в большинстве случаев неудобно. </p>
 <p>Есть способ лучше! Компонент позволяет объединить несколько независмых объектов в одно устройство через <a href="../../../config/getting-started/#yaml">YAML конфигурацию</a>. </p>
 <p>В качестве примера возьмём этот же датчик температуры/влажности:</p>
 <p><img alt="" src="../../../assets/images/devices/sensor/simple-1.png" width="750" /></p>
@@ -1198,7 +1184,7 @@
 <p class="admonition-title">В одном устройстве недопустимо использовать несколько датчиков с одним <code>type</code></p>
 </div>
 <div class="admonition attention">
-<p class="admonition-title">Значение <code>type</code> не всегда совпадает с <code>device_class</code> объекта. Возможные значения <code>type</code>: <a href="../float/#type">цифровые датчики</a>, <a href="../event/#type">событийные датчики</a></p>
+<p class="admonition-title">Значение <code>type</code> не всегда совпадает с <code>device_class</code> объекта. Возможные значения <code>type</code>: <a href="../float/#property-type">цифровые датчики</a>, <a href="../event/#property-type">событийные датчики</a></p>
 </div>
 <p>В <a href="../../../config/filter/">объектах для передачи в УДЯ</a> нужно выбрать <strong>только</strong> <code>sensor.room_temperature</code>.</p>
 <p><img alt="" src="../../../assets/images/devices/sensor/combine-1.png" width="480" />
@@ -1241,15 +1227,11 @@
 <p class="admonition-title">В одном устройстве недопустимо использовать несколько датчиков с одним <code>type</code></p>
 </div>
 <div class="admonition attention">
-<p class="admonition-title">FIX Значение <code>type</code> не всегда совпадает с <code>device_class</code> объекта. Возможные значения <code>type</code>: <a href="../float/#type">цифровые датчики</a>, <a href="../event/#type">событийные датчики</a></p>
+<p class="admonition-title">Значение <code>type</code> не всегда совпадает с <code>device_class</code> объекта. Возможные значения <code>type</code>: <a href="../float/#property-type">цифровые датчики</a>, <a href="../event/#property-type">событийные датчики</a></p>
 </div>
 <p>В объектах для передачи в УДЯ нужно выбрать <strong>только</strong> <code>humidifier.air_humidifier</code>.</p>
 <p><img alt="" src="../../../assets/images/devices/sensor/attach-1.png" width="480" />
 <img alt="" src="../../../assets/images/devices/sensor/attach-2.png" width="200" /></p>
-<h2 id="device-class">Выбор класса бинарного датчика<a class="headerlink" href="#device-class" title="Permanent link">&para;</a></h2>
-<p>Некоторые интеграции создают бинарные датчики с пустым или неверным атрибутом <code>device_class</code>. Такие датчики автоматически обнаружены не будут.</p>
-<p>Вы можете самостоятельно задать атрибут <code>device_class</code> через параметр объекта <code>Отображать как</code> в <code>Настройки</code> &rarr; <code>Устройства и объекты</code> &rarr; <a href="https://my.home-assistant.io/redirect/entities/"><code>Объекты</code></a></p>
-<p><img alt="" src="../../../assets/images/devices/sensor/binary-device-class.png" width="750" /></p>
 
 
 

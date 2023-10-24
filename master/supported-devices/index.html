@@ -1328,7 +1328,7 @@
 <tr>
 <th>Устройство</th>
 <th>Домен</th>
-<th>Примечания</th>
+<th>Примечаение</th>
 </tr>
 </thead>
 <tbody>
@@ -1338,13 +1338,13 @@
 <td>Только включение/выключение. Для запуска можно создать <code>input_button</code>, передать его в УДЯ и использовать в качестве триггера в автоматизации</td>
 </tr>
 <tr>
-<td>Бинарный датчик</td>
-<td><code>binary_sensor</code></td>
-<td>См. <a href="#event-sensors">событийные датчики</a></td>
-</tr>
-<tr>
 <td>Вентилятор</td>
 <td><code>fan</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Виртуальный выключатель</td>
+<td><code>input_boolean</code></td>
 <td></td>
 </tr>
 <tr>
@@ -1378,11 +1378,6 @@
 <td></td>
 </tr>
 <tr>
-<td>Кнопка HA</td>
-<td><code>button</code></td>
-<td>Не путать с <a href="../devices/button/">физическими кнопками</a></td>
-</tr>
-<tr>
 <td>Медиа-плеер</td>
 <td><code>media_player</code></td>
 <td>+ телевизоры и ресиверы</td>
@@ -1391,6 +1386,11 @@
 <td>Освещение</td>
 <td><code>light</code></td>
 <td></td>
+</tr>
+<tr>
+<td>Программная кнопка</td>
+<td><code>button</code><br><code>input_button</code></td>
+<td>Не путать с <a href="../devices/button/">физическими кнопками</a></td>
 </tr>
 <tr>
 <td>Пылесос</td>
@@ -1403,9 +1403,19 @@
 <td></td>
 </tr>
 <tr>
+<td>Событийный датчик</td>
+<td><code>binary_sensor</code></td>
+<td>См. <a href="#event-sensor">событийные датчики</a></td>
+</tr>
+<tr>
 <td>Сцена</td>
 <td><code>scene</code></td>
 <td></td>
+</tr>
+<tr>
+<td>Текст</td>
+<td><code>input_text</code></td>
+<td>Только для создания <a href="../devices/button/">виртуальных кнопок</a></td>
 </tr>
 <tr>
 <td>Термостат</td>
@@ -1420,32 +1430,17 @@
 <tr>
 <td>Цифровой датчик</td>
 <td><code>sensor</code></td>
-<td>См. <a href="#sensors">цифровые датчики</a></td>
+<td>См. <a href="#float-sensor">цифровые датчики</a></td>
 </tr>
 <tr>
 <td>Шторы</td>
 <td><code>cover</code></td>
 <td></td>
 </tr>
-<tr>
-<td></td>
-<td><code>input_boolean</code></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><code>input_button</code></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td><code>input_text</code></td>
-<td>Только для <a href="../devices/button/">виртуальных кнопок</a></td>
-</tr>
 </tbody>
 </table>
 <h2 id="float-sensor">Цифровые датчики<a class="headerlink" href="#float-sensor" title="Permanent link">&para;</a></h2>
-<p>Список содержит датчики, которые будут автоматически обнаружены для объектов, выбранных <a href="../config/filter/">для передачи</a> в УДЯ. На <a href="../devices/sensor/float/">вручную настраиваемые датчики</a> эти условия не распространяются.</p>
+<p>Список ниже описывает типы датчиков и условия их обнаружения для объектов, выбранных <a href="../config/filter/">для передачи</a> в УДЯ. На <a href="../devices/sensor/float/">вручную настраиваемые датчики</a> эти условия не распространяются.</p>
 <div class="admonition danger">
 <p class="admonition-title">Для автоматического обнаружения некоторых датчиков обязательно наличие атрибутов <code>device_class</code> и <code>unit_of_measurement</code>. Если вы создаёте <a href="https://www.home-assistant.io/integrations/template/#configuration-variables">датчик на шаблоне</a> - не забудьте их указать.</p>
 </div>
@@ -1507,49 +1502,73 @@
 </ul>
 <p>Или при наличии у объекта атрибута <code>battery_level</code></p>
 <h2 id="event-sensor">Событийные датчики<a class="headerlink" href="#event-sensor" title="Permanent link">&para;</a></h2>
-<p>Список содержит датчики, которые будут автоматически обнаружены для объектов в домене <code>binary_sensor</code>, выбранных <a href="../config/filter/">для передачи</a> в УДЯ. На <a href="../devices/sensor/event/">вручную настраиваемые датчики</a> эти условия не распространяются.</p>
+<p>Список содержит датчики, которые будут автоматически обнаружены для объектов выбранных <a href="../config/filter/">для передачи</a> в УДЯ. На <a href="../devices/sensor/event/">вручную настраиваемые датчики</a> эти условия не распространяются.</p>
 <div class="admonition danger">
-<p class="admonition-title">Для автоматического обнаружения датчиков обязательно наличие атрибута <code>device_class</code>.<br>Если вы создаёте <a href="https://www.home-assistant.io/integrations/template/#configuration-variables">датчик на шаблоне</a> - не забудьте его указать.<br>Если другая интеграция создала датчик без <code>device_class</code> - задайте его <a href="../devices/sensor/about/#device-class">вручную</a>.</p>
+<p class="admonition-title">Для автоматического обнаружения некоторых датчиков обязательно наличие атрибута <code>device_class</code>.<br>Если вы создаёте <a href="https://www.home-assistant.io/integrations/template/#configuration-variables">датчик на шаблоне</a> - не забудьте его указать.<br>Если другая интеграция создала датчик без <code>device_class</code> - задайте его <a href="../devices/sensor/event/#device-class">вручную</a>.</p>
 </div>
 <table>
 <thead>
 <tr>
 <th>Датчик</th>
 <th><code>device_class</code></th>
+<th>Домен</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td>Нажатие кнопки</td>
+<td><code>button</code></td>
+<td>Любой (<a href="../devices/button/">подробнее</a>)</td>
+</tr>
+<tr>
+<td>Нажатие кнопки</td>
+<td></td>
+<td><code>sensor</code> (компонент <a href="https://github.com/AlexxIT/XiaomiGateway3">Xiaomi Gateway 3</a>)</td>
+</tr>
+<tr>
 <td>Открытие/закрытие</td>
 <td><code>door</code>, <code>garage_door</code>, <code>window</code>, <code>opening</code></td>
+<td><code>binary_sensor</code></td>
 </tr>
 <tr>
 <td>Движение</td>
 <td><code>motion</code>, <code>occupancy</code>, <code>presence</code></td>
+<td><code>binary_sensor</code></td>
 </tr>
 <tr>
 <td>Наличие газа</td>
 <td><code>gas</code></td>
+<td><code>binary_sensor</code></td>
 </tr>
 <tr>
 <td>Наличие дыма</td>
 <td><code>smoke</code></td>
+<td><code>binary_sensor</code></td>
 </tr>
 <tr>
 <td>Низкий уровень заряда</td>
 <td><code>battery</code></td>
+<td><code>binary_sensor</code></td>
 </tr>
 <tr>
 <td>Низкий уровень воды</td>
 <td><code>water_level</code></td>
+<td><code>binary_sensor</code></td>
 </tr>
 <tr>
 <td>Наличие протечки</td>
 <td><code>moisture</code></td>
+<td><code>binary_sensor</code></td>
 </tr>
 <tr>
 <td>Вибрация</td>
 <td><code>vibration</code></td>
+<td><code>binary_sensor</code></td>
+</tr>
+<tr>
+<td>Вибрация</td>
+<td></td>
+<td><code>sensor</code> (компонент <a href="https://github.com/AlexxIT/XiaomiGateway3">Xiaomi Gateway 3</a>)</td>
 </tr>
 </tbody>
 </table>
@@ -1557,16 +1576,42 @@
 <table>
 <thead>
 <tr>
-<th>Устройство</th>
 <th>Домен</th>
 <th>Примечания</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td><code>alarm_control_panel</code></td>
+<td>В УДЯ нет подходящих умений</td>
+</tr>
+<tr>
+<td><code>device_tracker</code></td>
 <td></td>
-<td><code>input_select</code></td>
-<td>Нет ясности что делать при выборе разных значений<br>Обратите внимание на <a href="../advanced/capabilities/">пользовательские умения</a></td>
+</tr>
+<tr>
+<td><code>lawn_mower</code></td>
+<td>Поддержка запланирована</td>
+</tr>
+<tr>
+<td><code>notify</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>number</code>, <code>input_number</code></td>
+<td>Можно привязать к устройству через <a href="advanced/capabilties.md">пользовательские умения</a></td>
+</tr>
+<tr>
+<td><code>remote</code></td>
+<td>Можно задействовать в <a href="advanced/capabilties.md">пользовательском умении</a></td>
+</tr>
+<tr>
+<td><code>select</code>, <code>input_select</code></td>
+<td>Нет ясности что делать при выборе разных значений<br>Можно задействовать в <a href="../advanced/capabilities/">пользовательском умении</a></td>
+</tr>
+<tr>
+<td><code>siren</code></td>
+<td>Поддержка запланирована</td>
 </tr>
 </tbody>
 </table>
