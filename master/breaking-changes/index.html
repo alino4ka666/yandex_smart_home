@@ -1024,8 +1024,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#custom_toggles" class="md-nav__link">
+  <a href="#v1-custom-toggles" class="md-nav__link">
     Состояние для custom_toggles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v1-pressure-unit" class="md-nav__link">
+    Параметр pressure_unit
   </a>
   
 </li>
@@ -1095,8 +1102,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#custom_toggles" class="md-nav__link">
+  <a href="#v1-custom-toggles" class="md-nav__link">
     Состояние для custom_toggles
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v1-pressure-unit" class="md-nav__link">
+    Параметр pressure_unit
   </a>
   
 </li>
@@ -1127,7 +1141,7 @@
   <h1>Обратная совместимость</h1>
 
 <h2 id="0x-1x">Переход с 0.x на 1.x<a class="headerlink" href="#0x-1x" title="Permanent link">&para;</a></h2>
-<h3 id="custom_toggles">Состояние для custom_toggles<a class="headerlink" href="#custom_toggles" title="Permanent link">&para;</a></h3>
+<h3 id="v1-custom-toggles">Состояние для custom_toggles<a class="headerlink" href="#v1-custom-toggles" title="Permanent link">&para;</a></h3>
 <p>Пользовательские умения типа "Переключатели" теперь ожидают бинарные значения (<code>on/off/yes/no/True/False/1/0</code>) при определении своего состояния. 
 До версии 1.0 умение считалось включенным, когда состояние отличалось от <code>off</code>.</p>
 <div class="admonition example">
@@ -1150,6 +1164,9 @@
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nt">backlight</span><span class="p">:</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">          </span><span class="nt">state_template</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;{{</span><span class="nv"> </span><span class="s">not</span><span class="nv"> </span><span class="s">is_state(&quot;select.humidifier_led_brightness&quot;,</span><span class="nv"> </span><span class="s">&quot;off&quot;)</span><span class="nv"> </span><span class="s">}}&#39;</span><span class="w"> </span>
 </code></pre></div>
+<h3 id="v1-pressure-unit">Параметр pressure_unit<a class="headerlink" href="#v1-pressure-unit" title="Permanent link">&para;</a></h3>
+<p>Параметр <code>pressure_unit</code> (раздел <code>settings</code>) больше не поддерживается, удалите его из YAML конфигурации.</p>
+<p>Теперь компонент автоматически пытается сохранить единицы измерения при передаче значений датчиков из Home Assistant в УДЯ (<a href="../devices/sensor/float/#unit-conversion">подробнее о конвертации значений</a>)</p>
 
 
 
