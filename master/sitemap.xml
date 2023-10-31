@@ -36,11 +36,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.yaha-cloud.ru/master/advanced/capabilities/</loc>
-         <lastmod>2023-10-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.yaha-cloud.ru/master/advanced/clone/</loc>
          <lastmod>2023-10-31</lastmod>
          <changefreq>daily</changefreq>
@@ -57,6 +52,26 @@
     </url>
     <url>
          <loc>https://docs.yaha-cloud.ru/master/advanced/events/</loc>
+         <lastmod>2023-10-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.yaha-cloud.ru/master/advanced/capabilities/about/</loc>
+         <lastmod>2023-10-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.yaha-cloud.ru/master/advanced/capabilities/mode/</loc>
+         <lastmod>2023-10-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.yaha-cloud.ru/master/advanced/capabilities/range/</loc>
+         <lastmod>2023-10-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.yaha-cloud.ru/master/advanced/capabilities/toggle/</loc>
          <lastmod>2023-10-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
