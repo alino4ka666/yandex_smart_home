@@ -1307,10 +1307,14 @@
 По умолчанию компонент выполняет любые команды и в большинстве случаев не возвращает никаких ошибок (Алиса отвечает "Окей, включаю").</p>
 <p>Это поведение можно переопределить через шаблон <code>error_code_template</code> в <code>entity_config</code>. </p>
 <p>Если шаблон определён: перед выполнением команды компонент его вычислит и если что-то будет возвращено - команда выполнена не будет, а Алиса ответит текстом, соответствующем возвращённому коду ошибки.</p>
-<p>В шаблон передаётся переменная <code>capability</code>, содержащая информацию об умении (<a href="https://yandex.ru/dev/dialogs/smart-home/doc/reference/post-action.html">документация УДЯ</a>). 
-Самый простой способ её узнать - <a href="https://my.home-assistant.io/redirect/developer_events/">подпишитесь</a> на события <code>yandex_smart_home_device_action</code> и поуправляйте устройством. </p>
+<p>В шаблон передаются переменные:</p>
+<ul>
+<li><code>entity_id</code></li>
+<li><code>capability</code>: информация об умении (<a href="https://yandex.ru/dev/dialogs/smart-home/doc/reference/post-action.html">документация УДЯ</a>)</li>
+</ul>
+<p>Простой способ увидеть реальные значения переменных - <a href="https://my.home-assistant.io/redirect/developer_events/">подпишитесь</a> на события <code>yandex_smart_home_device_action</code> и поуправляйте устройством. </p>
 <p>Список допустимых кодов ошибок <strong>фиксирован</strong> (<a href="https://yandex.ru/dev/dialogs/smart-home/doc/concepts/response-codes.html">полный список</a>).</p>
-<p>Для безусловного запрета включения или отключения устройства задайте параметры <code>turn_on</code> и/или <code>turn_off</code> в <a href="../../config/entity/#turn_on-off">параметрах устройства</a>.</p>
+<p>Для безусловного запрета включения или отключения устройства задайте параметры <code>turn_on</code> и/или <code>turn_off</code> равным <code>false</code> в <a href="../../config/entity/#turn_on-off">параметрах устройства</a>.</p>
 <h2 id="examples">Примеры<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
 <h3 id="not-enough-water">Мало воды в чайнике<a class="headerlink" href="#not-enough-water" title="Permanent link">&para;</a></h3>
 <p>— Включи чайник</p>
