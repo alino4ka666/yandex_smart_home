@@ -949,27 +949,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../advanced/clone/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Несколько интеграций
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../advanced/events/" class="md-nav__link">
         
   
@@ -1018,43 +997,6 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Проблемы и отладка
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            Проблемы и отладка
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../../troubleshoot/" class="md-nav__link">
         
@@ -1068,35 +1010,6 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../troubleshoot/debug/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Отладка
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -1105,11 +1018,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../quasar/" class="md-nav__link">
+      <a href="../../faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Квазар и "Дом с Алисой"
+    Часто задаваемые вопросы
   </span>
   
 
@@ -1145,11 +1058,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../../faq/" class="md-nav__link">
+      <a href="../../quasar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Часто задаваемые вопросы
+    Квазар и "Дом с Алисой"
   </span>
   
 
@@ -1255,18 +1168,13 @@
 <div class="admonition danger">
 <p class="admonition-title"><strong>Не удаляйте интеграцию</strong> с облачным подключением без надобности. При удалении происходит отвязка от УДЯ с удалением связки ID/Пароль. При повторной настройке интеграции потребуется снова выполнять связку аккаунтов в УДЯ (уже с новыми реквизитами).</p>
 </div>
-<div class="admonition hint">
-<p class="admonition-title">При изменении типа подключения YAML конфигурацию менять или удалять не требуется</p>
-</div>
-<p>Для перехода с прямого подключения на облачное или наоборот:</p>
+<p>Поменять тип подключения у существующей интеграции невозможно. Однако, можно добавить новую интеграцию с желаемым типом без удаления старой.</p>
+<p>Примерный набор шагов для перехода с прямого подключения на облачное или наоборот:</p>
 <ul>
-<li><a href="../../quasar/#unlink">Отвяжите навык/производителя</a> с полным удалением всех устройств. Устройства привязываются к навыку, и если этого не сделать - в УДЯ будет два набора устройств.</li>
-<li>Измените тип подключения в <a href="../getting-started/#gui">настройках интеграции</a></li>
-<li>После перехода:<ul>
-<li>Прямое &rarr; Облачное: ID/Пароль - в настройках интеграции, раздел <code>notifier</code> в YAML конфигурации не используется (можно удалить или оставить, не имеет значения)</li>
-<li>Облачное &rarr; Прямое: следуйте <a href="../../advanced/direct-connection/">инструкции</a> по настройке прямого подключения </li>
-</ul>
-</li>
+<li><a href="../../install/integration/">Добавьте</a> новую интеграцию с желаемым типом подключения</li>
+<li>Привяжите новую интеграцию через приложение <a href="https://ya.cc/iot_app">Дом с Алисой</a></li>
+<li>Устройства уникальны в рамках навыка (производителя), поэтому после привязки новой интеграции появятся "дубли" устройств: одно устройство на "старом" навыке, другое - на "новом"</li>
+<li>Проверьте, как управляются устройства на новом навыке и если проблем не выявлено, то старый навык можно <a href="../../quasar/#unlink">отвязать</a> с удалением всех устройств</li>
 </ul>
 <h2 id="compare">Какой тип подключения лучше?<a class="headerlink" href="#compare" title="Permanent link">&para;</a></h2>
 <table>
@@ -1279,7 +1187,7 @@
 </thead>
 <tbody>
 <tr>
-<td>Облачное</td>
+<td>Облачное<br>Yaha Cloud</td>
 <td><ul><li>Просто работает</li><li>Меньшее время отклика чем у прямого на значительном удалении от Москвы<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li></ul></td>
 <td><ul><li>Зависит от доступности<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup> дополнительного "облачного" сервера между Home Assistant и УДЯ</li><li>Для параноиков: устройства видны не только Яндексу, но и владельцу "облачного" сервера<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></li></ul></td>
 </tr>
@@ -1300,7 +1208,7 @@
 <p>Облачное подключение держит соединение постоянно открытым. Прямое - на каждый запрос устанавливает отдельное соединение с TLS-хедшейком, время которого значительно растёт с увеличением пинга.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:2">
-<p>С ноября 2021 по июль 2022 <a href="https://stats.uptimerobot.com/QX83nsXBWW">доступно на 100%</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+<p><a href="https://stats.uptimerobot.com/QX83nsXBWW">Статистика доступности</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 <li id="fn:3">
 <p>Но управлять он ими не будет, ему это просто не нужно :) Все данные на "облачном" обезличены, а проходящий трафик зашифрован.&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>

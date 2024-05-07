@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://docs.yaha-cloud.ru/master/breaking-changes/">
       
       
-        <link rel="prev" href="../faq/">
+        <link rel="prev" href="../quasar/">
       
       
         <link rel="next" href="../recipes/">
@@ -898,27 +898,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced/clone/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Несколько интеграций
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../advanced/events/" class="md-nav__link">
         
   
@@ -967,43 +946,6 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Проблемы и отладка
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            Проблемы и отладка
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
       <a href="../troubleshoot/" class="md-nav__link">
         
@@ -1017,35 +959,6 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../troubleshoot/debug/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Отладка
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
     
       
       
@@ -1054,11 +967,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../quasar/" class="md-nav__link">
+      <a href="../faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Квазар и "Дом с Алисой"
+    Часто задаваемые вопросы
   </span>
   
 
@@ -1094,11 +1007,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
+      <a href="../quasar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Часто задаваемые вопросы
+    Квазар и "Дом с Алисой"
   </span>
   
 
@@ -1164,6 +1077,15 @@
   
     <nav class="md-nav" aria-label="Переход с 0.x на 1.x">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v1-notifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Прямое подключение: настройки нотификатора
+    </span>
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#v1-custom-toggles" class="md-nav__link">
@@ -1251,6 +1173,15 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#v1-notifier" class="md-nav__link">
+    <span class="md-ellipsis">
+      Прямое подключение: настройки нотификатора
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#v1-custom-toggles" class="md-nav__link">
     <span class="md-ellipsis">
       Состояние для custom_toggles
@@ -1294,6 +1225,10 @@
   <h1>Обратная совместимость</h1>
 
 <h2 id="0x-1x">Переход с 0.x на 1.x<a class="headerlink" href="#0x-1x" title="Permanent link">&para;</a></h2>
+<h3 id="v1-notifier">Прямое подключение: настройки нотификатора<a class="headerlink" href="#v1-notifier" title="Permanent link">&para;</a></h3>
+<p>С версии 1.x для прямого подключения служба уведомленией о состоянии устройств (<a href="https://docs.yaha-cloud.ru/v0.6.x/advanced/direct-connection/#notifier">нотификатор</a>) настраивается через <a href="../config/getting-started/#gui">интерфейс</a> (раздел <code>Параметры навыка</code>), а не YAML конфигурацию.</p>
+<p>Параметры из секции <code>notifier</code> YAML конфигурации будут перенесены <strong>автоматически</strong> если в ней задан только один навык/пользователь.</p>
+<p>Если у вас несколько записей в секции <code>notifier</code> (например задействованы несколько пользователей) – необходимо перенести параметры вручную. Для каждого пользователя/навыка потребуется создать отдельную интеграцию с прямым типом подключения. </p>
 <h3 id="v1-custom-toggles">Состояние для custom_toggles<a class="headerlink" href="#v1-custom-toggles" title="Permanent link">&para;</a></h3>
 <p>Пользовательские умения типа "Переключатели" теперь ожидают бинарные значения (<code>on/off/yes/no/True/False/1/0</code>) при определении своего состояния. 
 До версии 1.0 умение считалось включенным, когда состояние отличалось от <code>off</code>.</p>
@@ -1355,7 +1290,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Нижний колонтитул" >
         
           
-          <a href="../faq/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Часто задаваемые вопросы">
+          <a href="../quasar/" class="md-footer__link md-footer__link--prev" aria-label="Назад: Квазар и &#34;Дом с Алисой&#34;">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
@@ -1365,7 +1300,7 @@
                 Назад
               </span>
               <div class="md-ellipsis">
-                Часто задаваемые вопросы
+                Квазар и "Дом с Алисой"
               </div>
             </div>
           </a>

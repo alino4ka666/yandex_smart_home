@@ -14,7 +14,7 @@
         <link rel="prev" href="../advanced/error-codes/">
       
       
-        <link rel="next" href="debug/">
+        <link rel="next" href="../faq/">
       
       
       <link rel="icon" href="../assets/logo/favicon.png">
@@ -898,27 +898,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../advanced/clone/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Несколько интеграций
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../advanced/events/" class="md-nav__link">
         
   
@@ -963,45 +942,6 @@
     
       
       
-  
-  
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Проблемы и отладка
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_8">
-            <span class="md-nav__icon md-icon"></span>
-            Проблемы и отладка
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
   
   
     
@@ -1098,15 +1038,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#no-notifier" class="md-nav__link">
+  <a href="#notification-request-failed" class="md-nav__link">
     <span class="md-ellipsis">
-      В УДЯ нет графиков / устройства не выбираются в условиях
+      Notification request failed
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Notification request failed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#unknown-user" class="md-nav__link">
     <span class="md-ellipsis">
       Notification request failed: UNKNOWN_USER
@@ -1114,8 +1055,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#notifier-unathorized" class="md-nav__link">
     <span class="md-ellipsis">
       Notification request failed: Unauthorized
@@ -1123,39 +1064,15 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
     </ul>
   
 </nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="debug/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Отладка
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -1168,11 +1085,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../quasar/" class="md-nav__link">
+      <a href="../faq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Квазар и "Дом с Алисой"
+    Часто задаваемые вопросы
   </span>
   
 
@@ -1208,11 +1125,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../faq/" class="md-nav__link">
+      <a href="../quasar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Часто задаваемые вопросы
+    Квазар и "Дом с Алисой"
   </span>
   
 
@@ -1333,15 +1250,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#no-notifier" class="md-nav__link">
+  <a href="#notification-request-failed" class="md-nav__link">
     <span class="md-ellipsis">
-      В УДЯ нет графиков / устройства не выбираются в условиях
+      Notification request failed
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Notification request failed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#unknown-user" class="md-nav__link">
     <span class="md-ellipsis">
       Notification request failed: UNKNOWN_USER
@@ -1349,13 +1267,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#notifier-unathorized" class="md-nav__link">
     <span class="md-ellipsis">
       Notification request failed: Unauthorized
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1422,22 +1345,17 @@
 <p>В УДЯ присутствует устройство, но объект по которому оно создано не выбран в <a href="../config/filter/">объектах для передачи в УДЯ</a>. </p>
 <p>Для исправления: удалите устройство из УДЯ или добавьте <a href="../faq/#get-entity-id-quasar">объект</a> в список устройств для передачи.</p>
 <h2 id="unsupported-mode">Unsupported mode "XXX"<a class="headerlink" href="#unsupported-mode" title="Permanent link">&para;</a></h2>
-<p>Не удалось связать режимы между УДЯ и Home Assistant. Если нет необходимости выбирать проблемные режимы - ошибку можно игноривать. </p>
+<p>Не удалось связать режимы между УДЯ и Home Assistant. Если нет необходимости выбирать проблемные режимы - ошибку можно игнорировать. </p>
 <p>Для исправления: настройте <a href="../config/modes/">связь режимов</a> УДЯ &harr; HA</p>
-<h2 id="no-notifier">В УДЯ нет графиков / устройства не выбираются в условиях<a class="headerlink" href="#no-notifier" title="Permanent link">&para;</a></h2>
-<p>Только для прямого подключения: <a href="../advanced/direct-connection/#notifier">настройте отправку уведомлений</a> об изменении состояний устройств</p>
-<h2 id="unknown-user">Notification request failed: UNKNOWN_USER<a class="headerlink" href="#unknown-user" title="Permanent link">&para;</a></h2>
+<h2 id="notification-request-failed">Notification request failed<a class="headerlink" href="#notification-request-failed" title="Permanent link">&para;</a></h2>
+<p>Ряд ошибок, которые могут возникает при отправке в УДЯ уведомлений об изменении состояний устройств. Ошибки могут возникать периодически - это нормально. Если ошибок мало - просто очистите журнал.</p>
+<h3 id="unknown-user">Notification request failed: UNKNOWN_USER<a class="headerlink" href="#unknown-user" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Облачное подключение: <a href="../quasar/#discovery">Обновите список устройств</a></li>
-<li>Прямое подключение:<ol>
-<li><a href="debug/#debug-logger">Включите отладку</a></li>
-<li><a href="../quasar/#discovery">Обновите список устройств</a> в УДЯ</li>
-<li>В <code>home-assistant.log</code> найдите запрос <code>/user/devices</code> и убедитесь, что <code>user_id</code> в нём совпадает с <code>user_id</code> в конфигурации <a href="../advanced/direct-connection/#notifier">нотификатора</a></li>
-</ol>
-</li>
+<li>Вручную <a href="../quasar/#discovery">обновите список устройств</a></li>
+<li>Для прямого подключения: убедитесь, что в параметрах навыка в <a href="../config/getting-started/#gui">настройках интеграции</a> выбран пользователь, который использовался при привязке Home Assistant к УДЯ</li>
 </ul>
-<h2 id="notifier-unathorized">Notification request failed: Unauthorized<a class="headerlink" href="#notifier-unathorized" title="Permanent link">&para;</a></h2>
-<p>Только для прямого подключения: обновите <a href="../advanced/direct-connection/#notifier-401">oauth_token</a></p>
+<h3 id="notifier-unathorized">Notification request failed: Unauthorized<a class="headerlink" href="#notifier-unathorized" title="Permanent link">&para;</a></h3>
+<p>Только для прямого подключения: обновите токен в параметрах навыка в <a href="../config/getting-started/#gui">настройках интеграции</a> и убедитесь, что указан верный Идентификатор диалога</p>
 
 
 
@@ -1490,13 +1408,13 @@
         
         
           
-          <a href="debug/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Отладка">
+          <a href="../faq/" class="md-footer__link md-footer__link--next" aria-label="Вперед: Часто задаваемые вопросы">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Вперед
               </span>
               <div class="md-ellipsis">
-                Отладка
+                Часто задаваемые вопросы
               </div>
             </div>
             <div class="md-footer__button md-icon">
